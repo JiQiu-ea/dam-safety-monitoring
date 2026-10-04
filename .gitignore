@@ -1,0 +1,21 @@
+# ===== 操作系统与编辑器 =====
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# ===== Office 临时文件 =====
+~$*.docx
+~$*.xlsx
+~$*.pptx
+~$*.doc
+
+# ===== 本地临时文件与日志 =====
+*.tmp
+*.log
+*.bak
+
+# ===== 工具生成目录（不上传） =====
+.workbuddy/

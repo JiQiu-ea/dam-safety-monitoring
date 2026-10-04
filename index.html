@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大绩水库大坝安全监测平台</title>
+<style>
+  /* ===== 基础排版 ===== */
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    color: #1f2328;
+    background: #f6f8fa;
+    line-height: 1.7;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* ===== 页眉与导航 ===== */
+  header.site-header {
+    background: #0a4d8c;
+    color: #ffffff;
+    padding: 20px 0 0 0;
+  }
+  header.site-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  header.site-header p.subtitle {
+    margin: 4px 0 12px 0;
+    font-size: 13px;
+    color: #cfe3f5;
+  }
+  nav.main-nav {
+    background: #083d70;
+  }
+  nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  nav.main-nav li { margin: 0; }
+  nav.main-nav a {
+    display: block;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  nav.main-nav a:hover { background: #0a4d8c; }
+
+  /* ===== 区块 ===== */
+  section {
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  section h2 {
+    margin-top: 0;
+    font-size: 20px;
+    border-bottom: 2px solid #0a4d8c;
+    padding-bottom: 6px;
+  }
+
+  /* ===== 表格通用样式（工程概况参数表、监测数据表共用） ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  table caption {
+    text-align: left;
+    font-size: 13px;
+    color: #57606a;
+    margin-bottom: 6px;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 8px 10px;
+    text-align: left;
+  }
+  thead th { background: #f0f4f8; }
+
+  /* ===== 图片 ===== */
+  img.dam-photo {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #d0d7de;
+    border-radius: 4px;
+  }
+
+  /* ===== 状态配色（与需求文档表 5-2 一致，供曹哲数据表使用） ===== */
+  .status-normal  { color: #1a7f37; font-weight: 600; } /* 正常-绿 */
+  .status-attend  { color: #9a6700; font-weight: 600; } /* 关注-黄 */
+  .status-warning { color: #bc4c00; font-weight: 600; } /* 预警-橙 */
+  .status-alarm   { color: #cf222e; font-weight: 600; } /* 告警-红 */
+  .status-nodata  { color: #57606a; font-weight: 600; } /* 暂无数据-灰 */
+
+  /* ===== 页脚 ===== */
+  footer.site-footer {
+    text-align: center;
+    font-size: 13px;
+    color: #57606a;
+    padding: 20px 0 32px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== 页眉与导航（姚凯负责） ===================== -->
+<header class="site-header">
+  <div class="container">
+    <h1>大绩水库大坝安全监测平台</h1>
+    <p class="subtitle">福建省龙岩市武平县中堡镇大绩村 · 小（1）型水库 · 混凝土重力坝</p>
+  </div>
+  <nav class="main-nav">
+    <div class="container">
+      <ul>
+        <li><a href="#overview">工程概况</a></li>
+        <li><a href="#monitor">实时监测</a></li>
+        <li><a href="#history">历史数据</a></li>
+        <li><a href="#about">关于我们</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- 李恒毅：工程概况区块（参数表 + assets/dam.jpg 图片引用） -->
+  <section id="overview">
+    <h2>工程概况</h2>
+  </section>
+
+  <!-- 曹哲：监测数据表（六列表头 + 六行测点 + 两行"暂无数据"） -->
+  <section id="monitor">
+    <h2>实时监测</h2>
+  </section>
+
+  <!-- 历史数据（姚凯负责，简短说明） -->
+  <section id="history">
+    <h2>历史数据</h2>
+    <p>本栏目用于查询各监测点的历史渗流量与水位变化趋势。本阶段为静态首页，暂以当日 8:00 采集数据为例；历史曲线与检索功能将在接入实时数据库后的下一迭代提供。</p>
+  </section>
+
+  <!-- 关于我们（姚凯负责，简短说明） -->
+  <section id="about">
+    <h2>关于我们</h2>
+    <p>本平台由河海大学"三人游"小组（姚凯、李恒毅、曹哲）为智慧水利课程作业开发，面向水库管理所值班员、工程科技术负责人与上级防汛监管部门，提供大绩水库工程概况与大坝安全监测数据的集中展示。</p>
+  </section>
+
+</main>
+
+<!-- ===================== 页脚（姚凯负责） ===================== -->
+<footer class="site-footer">
+  <div class="container">
+    <p>数据来源：大绩水库大坝安全监测系统各测站观测记录 ｜ 更新规则：监测数据每日 8:00 更新一次</p>
+    <p>大绩水库大坝安全监测平台 · 三人游小组 · 仅供课程作业演示</p>
+  </div>
+</footer>
+
+</body>
+</html>

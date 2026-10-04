@@ -173,6 +173,70 @@
   <!-- 曹哲：监测数据表（六列表头 + 六行测点 + 两行"暂无数据"） -->
   <section id="monitor">
     <h2>实时监测</h2>
+    <p>下表展示大绩水库各监测点当日 8:00 自动采集的渗流量与水位数据。状态分级：正常（运行参数在设计范围内）、关注（数据偏离常态，需加密观测）、暂无数据（本次未采集到读数，<strong>不代表 0</strong>）。</p>
+    <table>
+      <caption>数据来源：大绩水库大坝安全监测系统（每日 8:00 自动采集）；本页为静态示例数据</caption>
+      <thead>
+        <tr>
+          <th>监测点名称</th>
+          <th>监测类型</th>
+          <th>渗流量(L/s)</th>
+          <th>水位(m)</th>
+          <th>更新时间</th>
+          <th>状态</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>主坝坝基扬压力测点 U1</td>
+          <td>渗流</td>
+          <td>0.42</td>
+          <td>501.18</td>
+          <td>2026-10-07 08:00</td>
+          <td class="status-normal">正常</td>
+        </tr>
+        <tr>
+          <td>副坝渗流压力测点 S2</td>
+          <td>渗流</td>
+          <td>0.86</td>
+          <td>500.94</td>
+          <td>2026-10-07 08:00</td>
+          <td class="status-attend">关注</td>
+        </tr>
+        <tr>
+          <td>绕坝渗流测点 R1</td>
+          <td>渗流</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="status-nodata">暂无数据</td>
+        </tr>
+        <tr>
+          <td>坝顶 GNSS 位移测点 D1</td>
+          <td>位移</td>
+          <td>不涉及此项</td>
+          <td>不涉及此项</td>
+          <td>2026-10-07 08:00</td>
+          <td class="status-normal">正常</td>
+        </tr>
+        <tr>
+          <td>库水位计 W1</td>
+          <td>水位</td>
+          <td>不涉及此项</td>
+          <td>501.26</td>
+          <td>2026-10-07 08:00</td>
+          <td class="status-normal">正常</td>
+        </tr>
+        <tr>
+          <td>雨量站 P1</td>
+          <td>雨量</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="status-nodata">暂无数据</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- 历史数据（姚凯负责，简短说明） -->

@@ -19,7 +19,6 @@
     margin: 0 auto;
     padding: 0 16px;
   }
-
   /* ===== 页眉与导航 ===== */
   header.site-header {
     background: #0a4d8c;
@@ -54,7 +53,6 @@
     font-size: 15px;
   }
   nav.main-nav a:hover { background: #0a4d8c; }
-
   /* ===== 区块 ===== */
   section {
     background: #ffffff;
@@ -69,7 +67,6 @@
     border-bottom: 2px solid #0a4d8c;
     padding-bottom: 6px;
   }
-
   /* ===== 表格通用样式（工程概况参数表、监测数据表共用） ===== */
   table {
     width: 100%;
@@ -89,7 +86,6 @@
     text-align: left;
   }
   thead th { background: #f0f4f8; }
-
   /* ===== 图片 ===== */
   img.dam-photo {
     max-width: 100%;
@@ -97,14 +93,34 @@
     border: 1px solid #d0d7de;
     border-radius: 4px;
   }
-
+  /* ===== 工程概况两栏布局 + 图框 ===== */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  .dam-fig {
+    border: 1px dashed #b9c8d8;
+    border-radius: 6px;
+    padding: 10px;
+    background: #f8fbfd;
+    text-align: center;
+  }
+  .dam-fig .cap {
+    font-size: 12px;
+    color: #6b8299;
+    margin-top: 6px;
+  }
+  @media (max-width: 720px) {
+    .overview-grid { grid-template-columns: 1fr; }
+  }
   /* ===== 状态配色（与需求文档表 5-2 一致，供曹哲数据表使用） ===== */
   .status-normal  { color: #1a7f37; font-weight: 600; } /* 正常-绿 */
   .status-attend  { color: #9a6700; font-weight: 600; } /* 关注-黄 */
   .status-warning { color: #bc4c00; font-weight: 600; } /* 预警-橙 */
   .status-alarm   { color: #cf222e; font-weight: 600; } /* 告警-红 */
   .status-nodata  { color: #57606a; font-weight: 600; } /* 暂无数据-灰 */
-
   /* ===== 页脚 ===== */
   footer.site-footer {
     text-align: center;
@@ -115,7 +131,6 @@
 </style>
 </head>
 <body>
-
 <!-- ===================== 页眉与导航（姚凯负责） ===================== -->
 <header class="site-header">
   <div class="container">
@@ -133,9 +148,7 @@
     </div>
   </nav>
 </header>
-
 <main class="container">
-
   <!-- 李恒毅：工程概况区块（参数表 + assets/dam.jpg 图片引用） -->
 <!-- 工程概况 -->
 <section id="overview">
@@ -153,23 +166,18 @@
         <tr><th>下游灌溉面积</th><td>约 1500 亩</td></tr>
       </table>
     </div>
-    <div class="dam-fig">
-      <svg viewBox="0 0 320 200" width="100%" role="img" aria-label="大坝剖面示意图">
-        <rect width="320" height="200" fill="#eaf4fb"/>
-        <polygon points="0,150 60,90 120,140 180,100 240,145 320,110 320,200 0,200" fill="#bcd6ea"/>
-        <rect x="40" y="150" width="240" height="35" fill="#7fa8c9"/>
-        <rect x="40" y="150" width="240" height="8" fill="#5c8db3"/>
-        <rect x="60" y="120" width="30" height="30" fill="#4a7ba0"/>
-        <text x="160" y="175" font-size="12" fill="#ffffff" text-anchor="middle">主坝（混凝土重力坝）</text>
-        <line x1="30" y1="110" x2="290" y2="110" stroke="#35a0d0" stroke-dasharray="4 3"/>
-        <text x="290" y="105" font-size="10" fill="#2c6d92" text-anchor="end">正常蓄水位 503.00 m</text>
-      </svg>
-      <div class="cap">图：大坝剖面示意（示意用，非实测比例）</div>
+    <div>
+      <div class="dam-fig">
+        <img src="assets/dam-layout.jpg" alt="大绩水库枢纽布置示意图" style="width:100%;display:block;border-radius:4px">
+        <div class="cap">图1：枢纽布置与坝型示意图</div>
+      </div>
+      <div class="dam-fig" style="margin-top:12px">
+        <img src="assets/dam-profile.jpg" alt="主坝混凝土重力坝剖面" style="width:100%;display:block;border-radius:4px">
+        <div class="cap">图2：主坝混凝土重力坝剖面图</div>
+      </div>
     </div>
   </div>
 </section>
-
-
   <!-- 曹哲：监测数据表（六列表头 + 六行测点 + 两行"暂无数据"） -->
   <section id="monitor">
     <h2>实时监测</h2>
@@ -238,21 +246,17 @@
       </tbody>
     </table>
   </section>
-
   <!-- 历史数据（姚凯负责，简短说明） -->
   <section id="history">
     <h2>历史数据</h2>
     <p>本栏目用于查询各监测点的历史渗流量与水位变化趋势。本阶段为静态首页，暂以当日 8:00 采集数据为例；历史曲线与检索功能将在接入实时数据库后的下一迭代提供。</p>
   </section>
-
   <!-- 关于我们（姚凯负责，简短说明） -->
   <section id="about">
     <h2>关于我们</h2>
     <p>本平台由河海大学"三人游"小组（姚凯、李恒毅、曹哲）为智慧水利课程作业开发，面向水库管理所值班员、工程科技术负责人与上级防汛监管部门，提供大绩水库工程概况与大坝安全监测数据的集中展示。</p>
   </section>
-
 </main>
-
 <!-- ===================== 页脚（姚凯负责） ===================== -->
 <footer class="site-footer">
   <div class="container">
@@ -260,6 +264,5 @@
     <p>大绩水库大坝安全监测平台 · 三人游小组 · 仅供课程作业演示</p>
   </div>
 </footer>
-
 </body>
 </html>
